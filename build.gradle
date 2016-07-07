@@ -1,0 +1,35 @@
+apply plugin: "java"
+apply plugin: "eclipse-wtp"
+apply plugin: "war"
+
+compileJava {
+  // 소스 코드 인코딩 방식
+  options.encoding = "UTF-8"
+  // 컴파일시 자바 버젼
+  sourceCompatibility = 1.8
+}
+
+// 웹관련 설정 소스
+eclipse {
+  wtp {
+    facet {
+      facet name: 'jst.web', version: '3.1'
+      facet name: 'jst.java', version: '1.8'
+    }
+  }
+}
+
+// 의존 라이브러리 다운 받을 서버 선택 (메이븐 선택함)
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+  compile 'mysql:mysql-connector-java:5.1.37'
+  compile 'org.springframework:spring-webmvc:4.2.3.RELEASE'
+  compile 'org.springframework:spring-jdbc:4.2.3.RELEASE'
+  compile 'com.fasterxml.jackson.core:jackson-databind:2.6.4'
+  providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
+  compile group: 'junit', name: 'junit', version: '4.12'
+  compile group: 'org.hibernate', name: 'hibernate-core', version: '5.2.1.Final'
+}

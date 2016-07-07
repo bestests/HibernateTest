@@ -1,0 +1,27 @@
+{
+  "name": "HibernateTest",
+  "homepage": "https://github.com/bestests/HibernateTest",
+  "authors": [
+    "bestests <albatross0210@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6"
+  },
+  "install": {
+  	"path": "src/main/webapp/lib",
+  	"sources": {
+  		"jquery": "bower_components/jquery/dist/**",
+  		"bootstrap": "bower_components/bootstrap/dist/**"
+  	}
+  }
+}
